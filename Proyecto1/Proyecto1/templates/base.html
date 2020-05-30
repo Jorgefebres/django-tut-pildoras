@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>
+      {% block title %} {% endblock %}
+    </title>
+  </head>
+  <body>
+    <h1 style="color: white; background-color: #146984; text-align: center;">
+      CURSOS ONLINE
+    </h1>
+    {% include 'superior/barratemplate.html' %}
+    <h3 style="text-align: center;">
+      Cursos de programacion ofimatica y diseño web
+    </h3>
+    {% block content %} {% endblock %}
+  </body>
+  <footer style="color: white; background-color: #146984; text-align: right;">
+    Cursos gratuitos, Gracias por su visita.
+  </footer>
+</html>

@@ -1,0 +1,43 @@
+<html>
+  <div>
+    {% include 'superior/barratemplate.html' %}
+    <h2 style="color: red;">
+      Hola Mundo esta es nuestra primera pagina con django
+    </h2>
+    {# este es un comentario de una linea #}
+    {% comment %}
+      este es un comentario comentario
+      con varias lineas
+    {% endcomment %}
+    {% if p1.nombre == 'Jorge' %}
+      <p>El curso lo imparte el profesor titular</p>
+    {% else %}
+      <p>El curso lo imparte el profesor suplente</p>
+    {% endif %}
+
+    <!-- las llamadas a metodos dentro la plantilla no utilizan los paréntesis ej. upper-->
+    <!-- tambien se pueden utilizar los pipes ej. | upper-->
+    <p>El nombre del profesor es: {{ p1.nombre.upper }} {{ p1.apellido | upper }}</p>
+    <p>
+      Estamos viendo el tema de las plantillas a dia: {{fecha.day}} /
+      {{fecha.month}} / {{fecha.year}}
+    </p>
+    <p><strong>Temas del Curso:</strong></p>
+    <p>
+      <!-- aca utilizamos el punto para acceder al indice de una lista tema.0, tema.1 -->
+      <!-- aca utilizamos el for para recorrer la lista -->
+      {% if temas %}
+        {% for tema in temas %}
+          <ul>
+            <li>{{tema}} </li>
+          </ul> 
+        {% endfor %}
+      {% else %}
+        <ul>
+          <li>No hay elementos que mostrar </li>
+        </ul> 
+      {% endif %}
+    </p>
+  </div>
+</html>
+
